@@ -1,0 +1,9 @@
+SAVINGS
+202
+00-44
+10/12/2005
+200
+100
+3/ 3/2015 15:45:05 withdrawal_from_ATM -200.00
+3/ 1/2013 15:44:49 withdrawal_from_ATM -150.00
+1/ 8/2012 15:44:24 deposit_to_ATM 600

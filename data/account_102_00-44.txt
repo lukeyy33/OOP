@@ -1,0 +1,12 @@
+CURRENT
+102
+00-44
+10/12/2005
+200
+100
+7/2/2015 10:36:36 transfer_out_to_acct_301_00-44 -50
+7/2/2015 10:31:8 withdrawal_from_ATM -1
+7/5/2014 10:30:14 transfer_out_to_acct_101_00-44 -10
+7/5/2014 10:29:8 deposit_to_ATM 500
+3/3/2014 15:45:5 withdrawal_from_ATM -333.33
+3/3/2014 15:44:49 withdrawal_from_ATM -12.5
