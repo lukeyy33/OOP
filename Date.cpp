@@ -37,6 +37,10 @@ void Date::setDate( int d, int m, int y) {
 	month_ = m;
 	year_ = y;
 }
+bool Date::isValid() {
+
+
+}
 string Date::toFormattedString() const {
 //return date formatted as string ("DD/MM/YYYY")
 	ostringstream os;

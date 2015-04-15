@@ -51,6 +51,8 @@ public:
 	void showNoTransactionsOnScreen() const;
 	int readInSearchCommand() const;
 	int readInAmount() const;
+	
+	Date readInvalidDate(Date& const d) const;
 
 private:
     //support functions

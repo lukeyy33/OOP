@@ -157,6 +157,13 @@ int UserInterface::readInAmount() const {
 	cin >> a;
 	return a;
 }
+Date UserInterface::readInvalidDate(Date& const cd) const {
+	//ask for a date
+	Date d; 
+	cout << "\nDATE TO SEARCH BY: ";
+	cin >> d;
+	return d;
+}
 //output functions
 
 void UserInterface::showProduceBalanceOnScreen( double balance) const {

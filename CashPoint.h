@@ -59,7 +59,7 @@ private:
 	//option 7c
 	void m7c_showTransactionsForDate() const;
 	//option 8
-	//void m8_clearAllTransationsUpToDate() const;
+	void m8_clearAllTransationsUpToDate() const;
 	//option 9
 	
 

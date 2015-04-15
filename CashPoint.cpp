@@ -241,16 +241,30 @@ void CashPoint::m7a_showTransactionsForAmount() const {
 //--option 7b
 void CashPoint::m7b_showTransactionsForTitle() const {
 
+
 }
 //--option 7c
 void CashPoint::m7c_showTransactionsForDate() const {
 
+
 }
 
 //---option 8
-//void CashPoint::m8_clearAll() const {
-//	
-//}
+void CashPoint::m8_clearAllTransationsUpToDate() const {
+	//1: noTransactions := isEmptyTransactionList(): boolean
+	bool noTransaction(p_theActiveAccount_->isEmptyTransactionList());
+
+	if (noTransaction)
+	{
+		theUI_.showNoTransactionsOnScreen();
+	}
+	else //if (!noTransaction)
+	{
+		Date cd = p_theActiveAccount_->getCreationDate();
+		Date d = theUI_.readInvalidDate(cd);
+	}
+	
+}
 //
 ////---option 9
 //void CashPoint::m9_showFunds() const {
