@@ -145,6 +145,8 @@ void CashPoint::performAccountProcessingCommand( int option) {
 				break;
 		case 7: m7_searchForTransactions();
 				break;
+		//case 8: m8_clearAllTransationsUpToDate();
+			//break;
 		default:theUI_.showErrorInvalidCommand();
 	}
 }
@@ -208,8 +210,7 @@ void CashPoint::m6_showMiniStatement() const {
 }
 //---option 7
 void CashPoint::m7_searchForTransactions() const {
-	double total(0.0);
-	string str("");
+
 	//1: noTransactions := isEmptyTransactionList(): boolean
 	bool noTransaction(p_theActiveAccount_->isEmptyTransactionList() );
 	
@@ -221,23 +222,21 @@ void CashPoint::m7_searchForTransactions() const {
 	{
 		searchTransactions();
 	}
-	theUI_.showMatchingTransactionsOnScreen(noTransaction, str, total);
+
 }
 //--option 7a
 void CashPoint::m7a_showTransactionsForAmount() const {
-	double total(0.0);
-	//double amount(0.0);
-	string str("");
 	
 	//1: readInAmount(): double
 	double a = theUI_.readInAmount();
-	//2: produceTransactionsForAmount(a): string x integer
-	//a = p_theActiveAccount_->(produceTransactionsForAmount());
-	
+	//2: produceTransactionsForAmount(a): string x integer	
 		//amount = theUI_.readInDepositAmount();
-	p_theActiveAccount_->produceTransactionsForAmount(str, a, total);
-	
-	theUI_.showNoTransactionsOnScreen();
+	int n(0);
+	string str("");
+	cout << "\n in m7a_showTransactionsForAmount...";
+
+	p_theActiveAccount_->produceTransactionsForAmount( a, str, n);
+	theUI_.showMatchingTransactionsOnScreen(a, str, n);
 }
 //--option 7b
 void CashPoint::m7b_showTransactionsForTitle() const {
@@ -322,7 +321,8 @@ void CashPoint::searchTransactions() const{
 	case 2: m7b_showTransactionsForTitle();
 		break;
 	case 3: m7c_showTransactionsForDate();
-		default: theUI_.showErrorInvalidCommand();
+		break;
+	default: theUI_.showErrorInvalidCommand();
 	}
 }
 

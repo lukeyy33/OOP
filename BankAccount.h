@@ -57,7 +57,7 @@ public:
 	void storeBankAccountInFile( const string& fileName) const;
 
 	const string produceNMostRecentTransactions(int numTransactions, double& total) const;
-	void produceTransactionsForAmount(string& str, double amount, double& total) const;
+	void produceTransactionsForAmount(double amount, string& str, int& n) const;
 
 private:
     //data items

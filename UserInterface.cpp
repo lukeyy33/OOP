@@ -152,7 +152,10 @@ int UserInterface::readInSearchCommand() const {
 	return (readInCommand());
 }
 int UserInterface::readInAmount() const {
-	return (readInCommand() );
+	double a;
+	cout << "\nAMOUNT TO SEARCH: \234";
+	cin >> a;
+	return a;
 }
 //output functions
 

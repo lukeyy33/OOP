@@ -59,14 +59,17 @@ TransactionList TransactionList::getTransactionsForAmount(double amount) const {
 		return *this;
 	else
 	{
-		TransactionList trlAbove(olderTransactions().getTransactionsForAmount(amount));
-		if (newestTransaction().getAmount() >= amount)
-		{
-			trlAbove.addNewTransaction(newestTransaction());
+		TransactionList ret, copy(*this);
+		while (copy.size() != 0) {
+			if (copy.newestTransaction().getAmount() == amount)
+			{
+				ret.addNewTransaction(newestTransaction());
+				cout << "\n trans ok: " << newestTransaction().toFormattedString();
+			}
+			copy.deleteFirstTransaction();
 		}
-		return trlAbove;
+		return ret;
 	}
-
 }
 
 const string TransactionList::toFormattedString() const {

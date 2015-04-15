@@ -84,9 +84,12 @@ const string BankAccount::produceNMostRecentTransactions(int numTransactions, do
 	os << trl.toFormattedString();
 	return(os.str());
 }
-void BankAccount::produceTransactionsForAmount(string& str, double amount, double& total) const {
-	ostringstream os;
+void BankAccount::produceTransactionsForAmount( double amount, string& str, int& n) const {
+	cout << "\n in produceTransactionsForAmount...1";
 	TransactionList trl = transactions_.getTransactionsForAmount(amount);
+	cout << "\n in produceTransactionsForAmount...2";
+	n = trl.size();
+	str = trl.toFormattedString();
 }
 
 bool BankAccount::canWithdraw( double amountToWithdraw ) const {

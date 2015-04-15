@@ -58,9 +58,10 @@ private:
 	void m7b_showTransactionsForTitle() const;	
 	//option 7c
 	void m7c_showTransactionsForDate() const;
-
+	//option 8
+	//void m8_clearAllTransationsUpToDate() const;
+	//option 9
 	
-
 
     //support file handling functions & creation of dynamic objects
     bool canOpenFile( const string&) const;
