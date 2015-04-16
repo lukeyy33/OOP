@@ -145,8 +145,8 @@ void CashPoint::performAccountProcessingCommand( int option) {
 				break;
 		case 7: m7_searchForTransactions();
 				break;
-		//case 8: m8_clearAllTransationsUpToDate();
-			//break;
+		case 8: m8_clearAllTransationsUpToDate();
+				break;
 		default:theUI_.showErrorInvalidCommand();
 	}
 }
@@ -254,6 +254,9 @@ void CashPoint::m8_clearAllTransationsUpToDate() const {
 	//1: noTransactions := isEmptyTransactionList(): boolean
 	bool noTransaction(p_theActiveAccount_->isEmptyTransactionList());
 
+	int n(0);
+	string str("");
+
 	if (noTransaction)
 	{
 		theUI_.showNoTransactionsOnScreen();
@@ -262,6 +265,8 @@ void CashPoint::m8_clearAllTransationsUpToDate() const {
 	{
 		Date cd = p_theActiveAccount_->getCreationDate();
 		Date d = theUI_.readInvalidDate(cd);
+
+		p_theActiveAccount_->produceTransactionsUpToDate(d, str, n);
 	}
 	
 }

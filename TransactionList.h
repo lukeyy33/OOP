@@ -31,6 +31,7 @@ public:
 
 	const TransactionList getMostRecentTransactions(int numTransactions) const;
 	TransactionList getTransactionsForAmount(double amount) const;
+	TransactionList getTransactionsUpToDate(Date d) const;
 
 private:
     List<Transaction> listOfTransactions_;	//list of transactions

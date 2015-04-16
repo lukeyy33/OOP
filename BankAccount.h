@@ -34,6 +34,7 @@ public:
     const TransactionList getTransactions() const;
     bool	isEmptyTransactionList() const;
 
+
 	//functions to put data into and get data from streams
 	ostream& putDataInStream( ostream& os) const;
 	ostream& putAccountDetailsInStream(ostream& os) const;
@@ -58,7 +59,8 @@ public:
 
 	const string produceNMostRecentTransactions(int numTransactions, double& total) const;
 	void produceTransactionsForAmount(double amount, string& str, int& n) const;
-
+	
+	void produceTransactionsUpToDate(Date d, string& str, int& n) const;
 private:
     //data items
     string accountType_;

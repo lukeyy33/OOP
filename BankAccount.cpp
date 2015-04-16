@@ -92,6 +92,14 @@ void BankAccount::produceTransactionsForAmount( double amount, string& str, int&
 	str = trl.toFormattedString();
 }
 
+void BankAccount::produceTransactionsUpToDate(Date d, string& str, int& n) const {
+	cout << "\n in produceTransactionsForAmount...1";
+	TransactionList trl = transactions_.getTransactionsUpToDate(d);
+	cout << "\n in produceTransactionsForAmount...2";
+	n = trl.size();
+	str = trl.toFormattedString();
+}
+
 bool BankAccount::canWithdraw( double amountToWithdraw ) const {
 //check if enough money in account
     return ( amountToWithdraw <= borrowable());
