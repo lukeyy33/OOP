@@ -149,6 +149,8 @@ void CashPoint::performAccountProcessingCommand( int option) {
 				break;
 		case 9: m9_showFundsAvailableOnAllAccounts();
 				break;
+		case 10: m10_transferCashToAnotherAccount();
+				break;
 		default:theUI_.showErrorInvalidCommand();
 	}
 }
@@ -318,10 +320,28 @@ void CashPoint::m9_showFundsAvailableOnAllAccounts() {
 		//8: showFundsAvailableOnScreen(empty, double)
 	
 }
+<<<<<<< HEAD
 
 //--option 10
 void CashPoint::m10_transferCashToAnotherAccount() const {
 
+=======
+//--option 10
+void CashPoint::m10_transferCashToAnotherAccount() 
+{
+	string anAccountNumber, anAccountSortCode;
+	string s_card(p_theCashCard_->toFormattedString());
+	theUI_.showCardOnScreen(s_card);
+	string bankAccountFileName(theUI_.readInAccountToBeProcessed(anAccountNumber, anAccountSortCode));
+	int validAccountCode = validateAccount(bankAccountFileName);
+	theUI_.showValidateAccountOnScreen(validAccountCode, anAccountNumber, anAccountSortCode);
+	if (validAccountCode == 0)
+	{
+		BankAccount* transferAccount(activateBankAccount(bankAccountFileName));
+		attemptTransfer(transferAccount);
+		releaseBankAccount(transferAccount, bankAccountFileName);
+	}
+>>>>>>> origin/master
 }
 
 //------private file functions
@@ -418,4 +438,27 @@ BankAccount* CashPoint::releaseBankAccount( BankAccount* p_BA, string aBAFileNam
 	delete p_BA;
 	return nullptr;
 }
+
+void CashPoint::attemptTransfer(BankAccount* p_Transfer)
+{
+	double transferAmount = theUI_.readInTransferAmount();
+	bool trOutOK = p_theActiveAccount_->canTransferOut(transferAmount);
+	bool trInOK = p_Transfer->canTransferIn(transferAmount);
+	if (trOutOK && trInOK)
+	{
+		recordTransfer(transferAmount, p_Transfer);
+	}
+	theUI_.showTransferResultOnScreen(trOutOK, trInOK, transferAmount);
+}
+
+void CashPoint::recordTransfer(double transferAmount, BankAccount* p_Transfer)
+{
+	string tAN = p_Transfer->getAccountNumber();
+	string tSC = p_Transfer->getSortCode();
+	p_theActiveAccount_->recordTransferOut(transferAmount, tAN, tSC);
+	string aAN = p_theActiveAccount_->getAccountNumber();
+	string aSC = p_theActiveAccount_->getSortCode();
+	p_Transfer->recordTransferIn(transferAmount, aAN, aSC);
+}
+
 

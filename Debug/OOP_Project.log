@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 4/17/2015 4:00:00 PM.
      1>Project "D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\OOP_Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -21,3 +22,14 @@
 Build succeeded.
 
 Time Elapsed 00:00:01.49
+=======
+﻿Build started 17/04/2015 15:58:13.
+     1>Project "H:\Github\OOP\OOP_Project.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         OOP_Project.vcxproj -> H:\Github\OOP\Debug\OOP_Project.exe
+     1>Done Building Project "H:\Github\OOP\OOP_Project.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.05
+>>>>>>> origin/master

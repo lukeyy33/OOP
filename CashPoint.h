@@ -64,8 +64,8 @@ private:
 	void m8_clearAllTransationsUpToDate() const;
 	//option 9
 	void m9_showFundsAvailableOnAllAccounts();
-	//option 01
-	void m10_transferCashToAnotherAccount() const;
+	//option 10
+	void m10_transferCashToAnotherAccount();
 
     //support file handling functions & creation of dynamic objects
     bool canOpenFile( const string&) const;
@@ -80,6 +80,8 @@ private:
 
     void activateCashCard( const string&);
 	void releaseCashCard();
+	void attemptTransfer(BankAccount* p_BA);
+	void recordTransfer(double transferAmount, BankAccount* p_Transfer);
 };
 
 #endif

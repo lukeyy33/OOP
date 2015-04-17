@@ -23,7 +23,7 @@ public:
     BankAccount( const string& typ, const string& acctNum, const string& sCode,
                           const Date& cD, double b,
                           const TransactionList& trList);
-    ~BankAccount();
+    virtual ~BankAccount();
 
 	//getter (assessor) functions
 	const string getAccountType() const;
@@ -36,25 +36,25 @@ public:
 
 
 	//functions to put data into and get data from streams
-	ostream& putDataInStream( ostream& os) const;
-	ostream& putAccountDetailsInStream(ostream& os) const;
-	istream& getDataFromStream(istream& is);
-	istream& getAccountDataFromStream(istream& is);
+	virtual	ostream& putDataInStream( ostream& os) const;
+	virtual ostream& putAccountDetailsInStream(ostream& os) const;
+	virtual istream& getDataFromStream(istream& is);
+	virtual istream& getAccountDataFromStream(istream& is);
 
 	//other operations
-	const string prepareFormattedStatement() const;
+	virtual const string prepareFormattedStatement() const;
 
-    void recordDeposit( double amount);
+    virtual void recordDeposit( double amount);
 
-	double borrowable() const;
-	bool canWithdraw( double amount) const;
+	virtual double borrowable() const;
+	virtual bool canWithdraw( double amount) const;
     void recordWithdrawal( double amount);
 
 	void produceAllDepositTransactions(string& str, double& total) const;
 	void showAllDepositsOnScreen(bool);
 	void getTotalTransactions() const;
 
-	void readInBankAccountFromFile( const string& fileName);
+	virtual void readInBankAccountFromFile( const string& fileName);
 	void storeBankAccountInFile( const string& fileName) const;
 
 	const string produceNMostRecentTransactions(int numTransactions, double& total) const;
@@ -64,19 +64,26 @@ public:
 	void produceTransactionsUpToDate(const Date& d, string& str, int& n) const;
 	void recordDeletionOfTransaction(const Date& d);
 
+	virtual bool canTransferOut(double transferAmount) const;
+	virtual bool canTransferIn(double transferAmount) const;
+	void recordTransferOut(double transferAmount, string tAN, string tSC);
+	void recordTransferIn(double transferAmount, string aAN, string aSC);
+
+
 	double maxWithdrawalAllowed() const;
 	
-	
+protected:
+	string accountType_;
+	string accountNumber_;
+	string sortCode_;
+	Date   creationDate_;
+	double balance_;
+	TransactionList transactions_;
 
 	
 private:
     //data items
-    string accountType_;
-    string accountNumber_;
-    string sortCode_;
-    Date   creationDate_;
-	double balance_;
-    TransactionList transactions_;
+    
  
 	//support functions
 	void updateBalance( double amount);

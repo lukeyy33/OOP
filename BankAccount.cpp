@@ -110,6 +110,40 @@ void BankAccount::recordDeletionOfTransaction(const Date& d) {
 
 }
 
+bool BankAccount::canTransferOut(double transferAmount) const
+{
+	bool trOutOK;
+
+	trOutOK = canWithdraw(transferAmount);
+
+	return trOutOK;
+}
+
+bool BankAccount::canTransferIn(double transferAmount) const
+{
+	bool trOutOK;
+
+	return true;
+}
+
+void BankAccount::recordTransferOut(double transferAmount, string tAN, string tSC)
+{
+	//create a transfer transaction
+	Transaction aTransaction("transfer_out_to_acct" + tAN + "_" + tSC, -transferAmount);
+	//update active bankaccount
+	transactions_.addNewTransaction(aTransaction);		//update transactions_
+	updateBalance(-transferAmount);			//decrease balance_
+}
+
+void BankAccount::recordTransferIn(double transferAmount, string aAN, string aSC)
+{
+	//create a deposit transaction
+	Transaction aTransaction("transfer_in_from_acct" + aAN + "_" + aSC, transferAmount);
+	//update active bankaccount
+	transactions_.addNewTransaction(aTransaction);		//update transactions_
+	updateBalance(transferAmount);			//increase balance_
+}
+
 bool BankAccount::canWithdraw( double amountToWithdraw ) const {
 //check if enough money in account
     return ( amountToWithdraw <= borrowable());
