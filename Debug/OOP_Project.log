@@ -1,48 +1,9 @@
-﻿Build started 17/04/2015 15:43:40.
+﻿Build started 17/04/2015 15:58:13.
      1>Project "H:\Github\OOP\OOP_Project.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         H:\VS 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt 5003_Ass2_Main.cpp BankAccount.cpp CashCard.cpp CashPoint.cpp Date.cpp Time.cpp Transaction.cpp TransactionList.cpp UserInterface.cpp
-         UserInterface.cpp
-     1>h:\github\oop\userinterface.h(55): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>h:\github\oop\userinterface.cpp(149): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
-     1>h:\github\oop\userinterface.cpp(158): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
-     1>h:\github\oop\userinterface.cpp(160): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>h:\github\oop\userinterface.cpp(223): warning C4309: 'static_cast' : truncation of constant value
-     1>h:\github\oop\userinterface.cpp(235): warning C4309: 'static_cast' : truncation of constant value
-     1>h:\github\oop\userinterface.cpp(253): warning C4129: 'N' : unrecognized character escape sequence
-     1>h:\github\oop\userinterface.cpp(254): warning C4129: 'N' : unrecognized character escape sequence
-         TransactionList.cpp
-         Transaction.cpp
-         Time.cpp
-     1>h:\github\oop\time.cpp(31): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 h:\vs 2013\vc\include\time.inl(112) : see declaration of 'localtime'
-         Date.cpp
-     1>h:\github\oop\date.cpp(32): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 h:\vs 2013\vc\include\time.inl(112) : see declaration of 'localtime'
-         CashPoint.cpp
-     1>h:\github\oop\userinterface.h(55): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>h:\github\oop\cashpoint.cpp(243): warning C4800: 'double' : forcing value to bool 'true' or 'false' (performance warning)
-         CashCard.cpp
-         BankAccount.cpp
-     1>h:\github\oop\bankaccount.cpp(124): warning C4101: 'trOutOK' : unreferenced local variable
-         5003_Ass2_Main.cpp
-     1>h:\github\oop\userinterface.h(55): warning C4227: anachronism used : qualifiers on reference are ignored
-         Generating Code...
-       Link:
-         H:\VS 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\Github\OOP\Debug\OOP_Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\Github\OOP\Debug\OOP_Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"H:\Github\OOP\Debug\OOP_Project.lib" /MACHINE:X86 /SAFESEH Debug\5003_Ass2_Main.obj
-         Debug\BankAccount.obj
-         Debug\CashCard.obj
-         Debug\CashPoint.obj
-         Debug\Date.obj
-         Debug\Time.obj
-         Debug\Transaction.obj
-         Debug\TransactionList.obj
-         Debug\UserInterface.obj
-         LINK : H:\Github\OOP\Debug\OOP_Project.exe not found or not built by the last incremental link; performing full link
-     1>5003_Ass2_Main.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+     1>Link:
          OOP_Project.vcxproj -> H:\Github\OOP\Debug\OOP_Project.exe
      1>Done Building Project "H:\Github\OOP\OOP_Project.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.40
+Time Elapsed 00:00:00.05
