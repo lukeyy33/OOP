@@ -301,34 +301,25 @@ void CashPoint::m8_clearAllTransationsUpToDate() const {
 //
 ////---option 9
 void CashPoint::m9_showFundsAvailableOnAllAccounts() {
-	//1: accts:=getAccounsList():List<string>
-	bool empty;
-	double m(0.0);
-	List<string> accts(p_theCashCard_->getAccountsList());	
-	//2: empty := isEmpty(): boolean
-	empty = accts.isEmpty();
+		//1: accts:=getAccounsList():List<string>
 
-	while (empty == false)
-	{
+		//2: empty := isEmpty(): boolean
+
 		//3: first() string
-		accts.first();
-
-		string str("");
 
 		//4: pacct:= activateBankAccount(string): BankAccount*
-		BankAccount* pacct = activateBankAccount(str);
-		//5: m:= maxWidthrawalAllowed(): double
-		m = pacct->maxWithdrawalAllowed();
-		//6: releaseBankAccount(BankAccount*, string): BankAccount*
-		BankAccount* releaseBankAccount(BankAccount*, string);
-		//7: deleteFirst()
-		accts.deleteFirst();
 
-	}
-	//8: showFundsAvailableOnScreen(empty, double)
-	theUI_.showFundsAvailableOnScreen(empty, m);
+		//5: m:= maxWidthrawalAllowed(): double
+
+		//6: releaseBankAccount(BankAccount*, string): BankAccount*
+
+		//7: deleteFirst()
+		
+		//8: showFundsAvailableOnScreen(empty, double)
+	
 }
-//--option 9
+
+//--option 10
 void CashPoint::m10_transferCashToAnotherAccount() const {
 
 }

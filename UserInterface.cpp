@@ -250,7 +250,7 @@ void UserInterface::showTransactionsUpToDate(bool noTransaction, Date& d, int n,
 	{
 		if (n == 0)
 		{
-			cout << "\nNO TRANSACTIONS IN BANK ACCOUNT UP TO DATE" << d;
+			cout << "\nNO TRANSACTIONS IN BANK ACCOUNT UP TO THIS DATE";
 			cout << "\n________END OF ACCOUNT ENQUIRY________";
 		}
 		else
@@ -268,10 +268,7 @@ void UserInterface::showDeletionUpToDate(int n, Date d, bool de) const {
 		else
 			cout << "\nOPERATION CANCELLED - NO TRANSACTIONS HAVE BEEN DELETED";
 }
-void UserInterface::showFundsAvailableOnScreen(bool empty, double n) const {
 
-	cout << "\nFUNDS AVAILABLE: " << n;
-}
 //---------------------------------------------------------------------------
 //private support member functions
 //---------------------------------------------------------------------------
