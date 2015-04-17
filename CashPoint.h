@@ -64,6 +64,8 @@ private:
 	void m8_clearAllTransationsUpToDate() const;
 	//option 9
 	void m9_showFundsAvailableOnAllAccounts();
+	//option 01
+	void m10_transferCashToAnotherAccount() const;
 
     //support file handling functions & creation of dynamic objects
     bool canOpenFile( const string&) const;

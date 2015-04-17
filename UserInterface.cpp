@@ -51,11 +51,11 @@ void UserInterface::showAccountProcessingMenu() const {
 	cout << "\n       4                       Show statement";
 	cout << "\n       5                    Show all deposits";
 	cout << "\n       6                  Show mini statement";
-	cout << "\n       7                  Search Transactions ";
-	cout << "\n       8    Clear all transactions up to date ";
-	cout << "\n       9                 Show Funds Available ";
-	cout << "\n       10         Transfer to another account  //TO BE IMPLEMENTED FOR ASS 2";
-	cout << "\n       ________________________________________";
+	cout << "\n       7                  Search Transactions NOT 100% DONE";
+	cout << "\n       8    Clear all transactions up to date NOT 100% DONE";
+	cout << "\n       9                 Show Funds Available NOT 100% DONE";
+	cout << "\n       10         Transfer to another account";
+	cout << "\n     ________________________________________";
 }
 
 const string UserInterface::readInCardToBeProcessed( string& aCardNumber) const {

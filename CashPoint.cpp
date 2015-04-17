@@ -298,7 +298,6 @@ void CashPoint::m9_showFundsAvailableOnAllAccounts() {
 		accts.first();
 
 		string str("");
-		
 
 		//4: pacct:= activateBankAccount(string): BankAccount*
 		BankAccount* pacct = activateBankAccount(str);
@@ -312,6 +311,10 @@ void CashPoint::m9_showFundsAvailableOnAllAccounts() {
 	}
 	//8: showFundsAvailableOnScreen(empty, double)
 	theUI_.showFundsAvailableOnScreen(empty, m);
+}
+//--option 9
+void CashPoint::m10_transferCashToAnotherAccount() const {
+
 }
 
 //------private file functions
