@@ -57,7 +57,8 @@ public:
 	bool readInConfirmDeletion() const;
 	void showDeletionUpToDate(int num, Date d, bool de) const;
 	void showFundsAvailableOnScreen(bool empty, double n) const;
-	
+	double readInTransferAmount() const;
+	void	showTransferResultOnScreen(bool trOutOK, bool trInOK, double transferAmount) const;
 
 private:
     //support functions

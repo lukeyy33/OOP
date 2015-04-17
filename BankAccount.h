@@ -64,6 +64,12 @@ public:
 	void produceTransactionsUpToDate(const Date& d, string& str, int& n) const;
 	void recordDeletionOfTransaction(const Date& d);
 
+	bool canTransferOut(double transferAmount) const;
+	bool canTransferIn(double transferAmount) const;
+	void recordTransferOut(double transferAmount, string tAN, string tSC);
+	void recordTransferIn(double transferAmount, string aAN, string aSC);
+
+
 	double maxWithdrawalAllowed() const;
 	
 	

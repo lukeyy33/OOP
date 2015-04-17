@@ -172,6 +172,13 @@ bool UserInterface::readInConfirmDeletion() const{
 	cout << "\nARE YOU SURE YOU WANT TO DELETE THESE TRANSACTIONS? (Y/N): ";
 	return (readInValidConfirmation());
 }
+
+double UserInterface::readInTransferAmount() const{
+	cout << "\nEnter the amount to be transfered: \234";
+	double amount;
+	cin >> amount;
+	return (amount);
+}
 //output functions
 
 void UserInterface::showProduceBalanceOnScreen( double balance) const {
@@ -258,6 +265,20 @@ void UserInterface::showTransactionsUpToDate(bool noTransaction, Date& d, int n,
 			cout << "\n\n" << str;
 		}
 	}
+}
+
+void UserInterface::showTransferResultOnScreen(bool trOutOK, bool trInOK, double transferAmount) const
+{
+	if (trOutOK && trInOK)
+	{
+		cout << "\nTRANSFER SUCCESSFUL";
+		cout << "\nAMOUNT TRANSFERRED: " << transferAmount;
+	}
+	else
+	{
+		cout << "\nTRANSFER FAILED";
+	}
+
 }
 void UserInterface::showDeletionUpToDate(int n, Date d, bool de) const {
 
