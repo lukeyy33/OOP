@@ -157,17 +157,15 @@ int UserInterface::readInAmount() const {
 	cin >> a;
 	return a;
 }
-Date UserInterface::readInvalidDate(Date& const cd) const {
-	//ask for a date
-	Date d, date;
+Date UserInterface::readInvalidDate(Date& const d) const {
+
 	cout << "\nDATE TO SEARCH BY: ";
 	cin >> d;
-	while (!date.isValid(d))
+	while (!d.isValid(d))
 	{
 		cout << "DATE NOT VALID - TRY AGAIN: ";
 		cin >> d;
 	}
-	//cin >> d;
 	return d;
 }
 bool UserInterface::readInConfirmDeletion() const{
@@ -242,7 +240,7 @@ void UserInterface::showNoTransactionsOnScreen() const {
 	cout << "\nNO TRANSACTIONS FOUND";
 }
 
-void UserInterface::showTransactionsUpToDate(bool noTransaction, Date d, int n, const string& str) const {
+void UserInterface::showTransactionsUpToDate(bool noTransaction, Date& d, int n, const string& str) const {
 	if (noTransaction)
 	{
 		cout << "\nNO TRANSACTIONS FOUND IN BANK ACCOUT\N";
@@ -257,7 +255,6 @@ void UserInterface::showTransactionsUpToDate(bool noTransaction, Date d, int n, 
 		}
 		else
 		{
-			cout << d;
 			cout << "\n\n" << str;
 		}
 	}

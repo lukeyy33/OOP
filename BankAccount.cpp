@@ -91,6 +91,13 @@ void BankAccount::produceTransactionsForAmount( double amount, string& str, int&
 	str = trl.toFormattedString();
 }
 
+void BankAccount::produceTransactionsForDate(const Date& d, string& str, int& n) const {
+
+	TransactionList trl = transactions_.getTransactionsForDate(d);
+	n = trl.size();
+	str = trl.toFormattedString();
+}
+
 void BankAccount::produceTransactionsUpToDate(const Date& d, string& str, int& n) const {
 	
 	TransactionList trl = transactions_.getTransactionsUpToDate(d);	

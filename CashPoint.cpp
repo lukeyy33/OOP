@@ -247,8 +247,24 @@ void CashPoint::m7b_showTransactionsForTitle() const {
 }
 //--option 7c
 void CashPoint::m7c_showTransactionsForDate() const {
+	//1: noTransactions := isEmptyTransactionList(): boolean
+	bool noTransaction(p_theActiveAccount_->isEmptyTransactionList());
 
+	int n(0);
+	string str("");
+	Date d;
+	if (noTransaction)
+	{
+		theUI_.showNoTransactionsOnScreen();
+	}
+	else //if (!noTransaction)
+	{
+		Date cd = p_theActiveAccount_->getCreationDate();
+		Date d = theUI_.readInvalidDate(cd);
 
+		p_theActiveAccount_->produceTransactionsForDate(d, str, n);
+	}
+	theUI_.showTransactionsUpToDate(noTransaction, d, n, str);
 }
 
 //---option 8

@@ -72,6 +72,24 @@ TransactionList TransactionList::getTransactionsForAmount(double amount) const {
 		return ret;
 	}
 }
+TransactionList TransactionList::getTransactionsForDate(const Date& d) const {
+
+	if (size() == 0)
+		return *this;
+	else
+	{
+		TransactionList trlUpTo(olderTransactions().getTransactionsUpToDate(d));
+
+
+		if (newestTransaction().getDate() == d)
+		{
+			trlUpTo.addNewTransaction(newestTransaction());
+		}
+
+		return trlUpTo;
+	}
+}
+
 TransactionList TransactionList::getTransactionsUpToDate(const Date& d) const {
 
 	if (size() == 0) 

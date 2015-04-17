@@ -1,10 +1,16 @@
-﻿Build started 4/17/2015 1:49:45 PM.
+﻿Build started 4/17/2015 2:54:04 PM.
      1>Project "D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\OOP_Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CashPoint.cpp
-         CashPoint.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt UserInterface.cpp
+         UserInterface.cpp
      1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.h(55): warning C4227: anachronism used : qualifiers on reference are ignored
-     1>d:\my documents\visual studio 2013\projects\oop_project\oop\cashpoint.cpp(241): warning C4800: 'double' : forcing value to bool 'true' or 'false' (performance warning)
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(149): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(158): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(160): warning C4227: anachronism used : qualifiers on reference are ignored
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(216): warning C4309: 'static_cast' : truncation of constant value
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(228): warning C4309: 'static_cast' : truncation of constant value
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(246): warning C4129: 'N' : unrecognized character escape sequence
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(247): warning C4129: 'N' : unrecognized character escape sequence
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.lib" /MACHINE:X86 /SAFESEH Debug\5003_Ass2_Main.obj
          Debug\BankAccount.obj
@@ -20,4 +26,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.84
+Time Elapsed 00:00:01.51
