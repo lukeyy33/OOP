@@ -14,7 +14,7 @@
 //____constructors & destructors
 
 CashPoint::CashPoint()
-	: p_theActiveAccount_( nullptr), p_theCashCard_( nullptr)
+: p_theActiveAccount_(nullptr), p_theCashCard_(nullptr), theUI_()
 { }
 
 CashPoint::~CashPoint()
@@ -147,6 +147,8 @@ void CashPoint::performAccountProcessingCommand( int option) {
 				break;
 		case 8: m8_clearAllTransationsUpToDate();
 				break;
+		case 9: m9_showFundsAvailableOnAllAccounts();
+				break;
 		default:theUI_.showErrorInvalidCommand();
 	}
 }
@@ -256,7 +258,7 @@ void CashPoint::m8_clearAllTransationsUpToDate() const {
 
 	int n(0);
 	string str("");
-
+	Date d;
 	if (noTransaction)
 	{
 		theUI_.showNoTransactionsOnScreen();
@@ -268,13 +270,49 @@ void CashPoint::m8_clearAllTransationsUpToDate() const {
 
 		p_theActiveAccount_->produceTransactionsUpToDate(d, str, n);
 	}
-	
+	theUI_.showTransactionsUpToDate(noTransaction, d, n, str);
+	if (!noTransaction && (str != ""))
+	{
+		bool deleteConfirmed = false;
+		deleteConfirmed = theUI_.readInConfirmDeletion();
+		if (deleteConfirmed)
+		{
+			p_theActiveAccount_->recordDeletionOfTransaction(d);
+		}
+		theUI_.showDeletionUpToDate(n, d, deleteConfirmed);
+	}
 }
 //
 ////---option 9
-//void CashPoint::m9_showFunds() const {
-//
-//}
+void CashPoint::m9_showFundsAvailableOnAllAccounts() {
+	//1: accts:=getAccounsList():List<string>
+	bool empty;
+	double m(0.0);
+	List<string> accts(p_theCashCard_->getAccountsList());	
+	//2: empty := isEmpty(): boolean
+	empty = accts.isEmpty();
+
+	while (empty == false)
+	{
+		//3: first() string
+		accts.first();
+
+		string str("");
+		
+
+		//4: pacct:= activateBankAccount(string): BankAccount*
+		BankAccount* pacct = activateBankAccount(str);
+		//5: m:= maxWidthrawalAllowed(): double
+		m = pacct->maxWithdrawalAllowed();
+		//6: releaseBankAccount(BankAccount*, string): BankAccount*
+		BankAccount* releaseBankAccount(BankAccount*, string);
+		//7: deleteFirst()
+		accts.deleteFirst();
+
+	}
+	//8: showFundsAvailableOnScreen(empty, double)
+	theUI_.showFundsAvailableOnScreen(empty, m);
+}
 
 //------private file functions
 

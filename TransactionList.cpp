@@ -3,6 +3,7 @@
 
 #include "TransactionList.h"
 
+
 //---------------------------------------------------------------------------
 //TransactionList: class implementation
 //---------------------------------------------------------------------------
@@ -71,21 +72,33 @@ TransactionList TransactionList::getTransactionsForAmount(double amount) const {
 		return ret;
 	}
 }
-TransactionList TransactionList::getTransactionsUpToDate(Date d) const {
-	if (size() == 0)
+TransactionList TransactionList::getTransactionsUpToDate(const Date& d) const {
+
+	if (size() == 0) 
 		return *this;
 	else
 	{
-		TransactionList ret, copy(*this);
-		while (copy.size() != 0) {
-			if (copy.newestTransaction() d)
+		TransactionList trlUpTo(olderTransactions().getTransactionsUpToDate(d));
+		
+			
+		if (newestTransaction().getDate() < d || newestTransaction().getDate() == d)
 			{
-				ret.addNewTransaction(newestTransaction());
-				cout << "\n trans ok: " << newestTransaction().toFormattedString();
+				trlUpTo.addNewTransaction(newestTransaction());
 			}
-			copy.deleteFirstTransaction();
-		}
-		return ret;
+					
+		return trlUpTo;
+	}
+}
+void TransactionList::deleteTransactionsUpToDate(const Date& d) 
+{
+	//call function to get list of transactions to delete
+	TransactionList deleteList = getTransactionsUpToDate(d);
+	TransactionList temp(*this);
+	while (!(deleteList.size() == 0))
+	{
+		Transaction temp = (deleteList.newestTransaction());
+		this->deleteGivenTransaction(temp);//delete transaction
+		deleteList.deleteFirstTransaction();//remove transaction from temp list
 	}
 }
 

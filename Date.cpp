@@ -37,9 +37,39 @@ void Date::setDate( int d, int m, int y) {
 	month_ = m;
 	year_ = y;
 }
-bool Date::isValid() {
+bool Date::isValid(Date date) {
 
-
+	if ((currentDate()<date) || (date.getMonth() > 12) || (date.getMonth() < 1) || (date.getDay() <1))
+		return false;
+	else
+	{
+		if ((date.getMonth() == 1) || //this is the January 
+			(date.getMonth() == 3) || //this is the March
+			(date.getMonth() == 5) || //this is the May
+			(date.getMonth() == 7) || //this is the July
+			(date.getMonth() == 8) || //this is august
+			(date.getMonth() == 10)|| //this is october
+			(date.getMonth() == 12))  //this is december
+		{
+			if (date.getDay() > 31) //if the day is 31 or more isn't not a month
+				return false;
+		}
+		else
+		{
+			if (date.getMonth() == 2) //if the month is February then there can't be more than 28 days
+			{
+				if (date.getDay() > 28)
+					return false;
+			}
+			else
+			{
+				if (date.getDay() > 30) //if the rest are over 30 then return false
+					return false;
+			}
+		}
+		return true;
+	}
+	
 }
 string Date::toFormattedString() const {
 //return date formatted as string ("DD/MM/YYYY")

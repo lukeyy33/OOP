@@ -24,7 +24,7 @@ public:
 	int getYear() const;				//return a data member value, year_
 	void setDate( int, int, int);		//set new values for date
     static const Date currentDate() ;   //return the current date
-	bool isValid();						//checks for valid date
+	bool isValid( Date date);						//checks for valid date
 
 	string toFormattedString() const ;				//return date as formatted string ("DD/MM/YYYY")
 

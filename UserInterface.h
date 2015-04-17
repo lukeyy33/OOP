@@ -53,6 +53,11 @@ public:
 	int readInAmount() const;
 	
 	Date readInvalidDate(Date& const d) const;
+	void showTransactionsUpToDate(bool noTransaction, Date d, int n, const string& str) const;
+	bool readInConfirmDeletion() const;
+	void showDeletionUpToDate(int num, Date d, bool de) const;
+	void showFundsAvailableOnScreen(bool empty, double n) const;
+	
 
 private:
     //support functions
@@ -60,6 +65,7 @@ private:
 	void	showAccountProcessingMenu() const;
     int		readInCommand() const;
     double	readInPositiveAmount() const;
+	bool	readInValidConfirmation() const;
 };
 
 #endif

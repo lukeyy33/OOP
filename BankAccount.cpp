@@ -85,24 +85,33 @@ const string BankAccount::produceNMostRecentTransactions(int numTransactions, do
 	return(os.str());
 }
 void BankAccount::produceTransactionsForAmount( double amount, string& str, int& n) const {
-	cout << "\n in produceTransactionsForAmount...1";
-	TransactionList trl = transactions_.getTransactionsForAmount(amount);
-	cout << "\n in produceTransactionsForAmount...2";
+	
+	TransactionList trl = transactions_.getTransactionsForAmount(amount);	
 	n = trl.size();
 	str = trl.toFormattedString();
 }
 
-void BankAccount::produceTransactionsUpToDate(Date d, string& str, int& n) const {
-	cout << "\n in produceTransactionsForAmount...1";
-	TransactionList trl = transactions_.getTransactionsUpToDate(d);
-	cout << "\n in produceTransactionsForAmount...2";
+void BankAccount::produceTransactionsUpToDate(const Date& d, string& str, int& n) const {
+	
+	TransactionList trl = transactions_.getTransactionsUpToDate(d);	
 	n = trl.size();
 	str = trl.toFormattedString();
+}
+
+void BankAccount::recordDeletionOfTransaction(const Date& d) {
+	transactions_.deleteTransactionsUpToDate(d);
+
 }
 
 bool BankAccount::canWithdraw( double amountToWithdraw ) const {
 //check if enough money in account
     return ( amountToWithdraw <= borrowable());
+}
+double BankAccount::maxWithdrawalAllowed() const {
+	double maxWidthdrawal(0.0);
+	maxWidthdrawal = balance_;
+
+	return maxWidthdrawal;
 }
 
 void BankAccount::recordWithdrawal( double amountToWithdraw) {

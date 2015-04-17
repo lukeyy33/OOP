@@ -52,10 +52,10 @@ void UserInterface::showAccountProcessingMenu() const {
 	cout << "\n       5                    Show all deposits";
 	cout << "\n       6                  Show mini statement";
 	cout << "\n       7                  Search Transactions ";
-	cout << "\n       8    Clear all transactions up to date  //TO BE IMPLEMENTED FOR ASS 2";
-	cout << "\n       9                 Show Funds Available  //TO BE IMPLEMENTED FOR ASS 2";
+	cout << "\n       8    Clear all transactions up to date ";
+	cout << "\n       9                 Show Funds Available ";
 	cout << "\n       10         Transfer to another account  //TO BE IMPLEMENTED FOR ASS 2";
-	cout << "\n         ________________________________________";
+	cout << "\n       ________________________________________";
 }
 
 const string UserInterface::readInCardToBeProcessed( string& aCardNumber) const {
@@ -159,10 +159,20 @@ int UserInterface::readInAmount() const {
 }
 Date UserInterface::readInvalidDate(Date& const cd) const {
 	//ask for a date
-	Date d; 
+	Date d, date;
 	cout << "\nDATE TO SEARCH BY: ";
 	cin >> d;
+	while (!date.isValid(d))
+	{
+		cout << "DATE NOT VALID - TRY AGAIN: ";
+		cin >> d;
+	}
+	//cin >> d;
 	return d;
+}
+bool UserInterface::readInConfirmDeletion() const{
+	cout << "\nARE YOU SURE YOU WANT TO DELETE THESE TRANSACTIONS? (Y/N): ";
+	return (readInValidConfirmation());
 }
 //output functions
 
@@ -232,6 +242,39 @@ void UserInterface::showNoTransactionsOnScreen() const {
 	cout << "\nNO TRANSACTIONS FOUND";
 }
 
+void UserInterface::showTransactionsUpToDate(bool noTransaction, Date d, int n, const string& str) const {
+	if (noTransaction)
+	{
+		cout << "\nNO TRANSACTIONS FOUND IN BANK ACCOUT\N";
+		cout << "\N_________END OF ACCOUNT ENQUIRY_______";
+	}
+	else
+	{
+		if (n == 0)
+		{
+			cout << "\nNO TRANSACTIONS IN BANK ACCOUNT UP TO DATE" << d;
+			cout << "\n________END OF ACCOUNT ENQUIRY________";
+		}
+		else
+		{
+			cout << d;
+			cout << "\n\n" << str;
+		}
+	}
+}
+void UserInterface::showDeletionUpToDate(int n, Date d, bool de) const {
+
+		if (de)
+		{
+			cout << "\nTHE " << n << " TRANSACTIONS IN BANK ACCOUNT UP TO DATE " << d << " HAVE BEEN DELETED";
+		}
+		else
+			cout << "\nOPERATION CANCELLED - NO TRANSACTIONS HAVE BEEN DELETED";
+}
+void UserInterface::showFundsAvailableOnScreen(bool empty, double n) const {
+
+	cout << "\nFUNDS AVAILABLE: " << n;
+}
 //---------------------------------------------------------------------------
 //private support member functions
 //---------------------------------------------------------------------------
@@ -260,4 +303,17 @@ double UserInterface::readInPositiveAmount() const {
 		cin >> amount;
 	}
     return amount;
+}
+bool UserInterface::readInValidConfirmation() const{
+	char confirm;
+	cin >> confirm;
+	while ((confirm != 'y') && (confirm != 'Y') && (confirm != 'n') && (confirm != 'N'))
+	{
+		cout << "INPUT NOT VALID - PLEASE ENTER Y or N: ";
+		cin >> confirm;
+	}
+	if ((confirm == 'y') || (confirm == 'Y'))
+		return true;
+	else
+		return false;
 }

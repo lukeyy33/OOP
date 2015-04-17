@@ -25,13 +25,14 @@ public:
 
 	TransactionList getAllDepositTransactions() const;
 	double getTotalTransactions() const;
-	const string toFormattedString() const;		//return transactionlist as a (formatted) string
+	const string toFormattedString() const;			//return transactionlist as a (formatted) string
 	ostream& putDataInStream( ostream& os) const;	//send TransactionList info into an output stream
-	istream& getDataFromStream( istream& is);	//receive TransactionList info from an input stream
+	istream& getDataFromStream( istream& is);		//receive TransactionList info from an input stream
 
 	const TransactionList getMostRecentTransactions(int numTransactions) const;
 	TransactionList getTransactionsForAmount(double amount) const;
-	TransactionList getTransactionsUpToDate(Date d) const;
+	TransactionList getTransactionsUpToDate(const Date& d) const;
+	void deleteTransactionsUpToDate(const Date& d);
 
 private:
     List<Transaction> listOfTransactions_;	//list of transactions

@@ -4,6 +4,7 @@
 #ifndef CashPointH
 #define CashPointH 
 
+
 //---------------------------------------------------------------------------
 //CashPoint: class declaration
 //---------------------------------------------------------------------------
@@ -11,6 +12,7 @@
 #include "CashCard.h"
 #include "BankAccount.h"
 #include "UserInterface.h"
+#include "ListT.h"
 
 #include <fstream>
 #include <string>
@@ -61,16 +63,18 @@ private:
 	//option 8
 	void m8_clearAllTransationsUpToDate() const;
 	//option 9
-	
+	void m9_showFundsAvailableOnAllAccounts();
 
     //support file handling functions & creation of dynamic objects
     bool canOpenFile( const string&) const;
 	int checkAccountType( const string&) const;
 	void searchTransactions() const;
 	bool linkedCard( string cashCardFileName) const;
+	
 
 	BankAccount* activateBankAccount( const string&);
 	BankAccount* releaseBankAccount( BankAccount*, string);
+	
 
     void activateCashCard( const string&);
 	void releaseCashCard();

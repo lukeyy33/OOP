@@ -60,7 +60,14 @@ public:
 	const string produceNMostRecentTransactions(int numTransactions, double& total) const;
 	void produceTransactionsForAmount(double amount, string& str, int& n) const;
 	
-	void produceTransactionsUpToDate(Date d, string& str, int& n) const;
+	void produceTransactionsUpToDate(const Date& d, string& str, int& n) const;
+	void recordDeletionOfTransaction(const Date& d);
+
+	double maxWithdrawalAllowed() const;
+	
+	
+
+	
 private:
     //data items
     string accountType_;
