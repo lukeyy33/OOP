@@ -72,6 +72,24 @@ TransactionList TransactionList::getTransactionsForAmount(double amount) const {
 		return ret;
 	}
 }
+TransactionList TransactionList::getTransactionsForTitle(string title) const {
+	if (size() == 0)
+		return *this;
+	else
+	{
+		TransactionList ret, copy(*this);
+		while (copy.size() != 0) {
+			if (copy.newestTransaction().getTitle() == title)
+			{
+				ret.addNewTransaction(newestTransaction());
+				cout << "\n trans ok: " << newestTransaction().toFormattedString();
+			}
+			copy.deleteFirstTransaction();
+		}
+		return ret;
+	}
+}
+
 TransactionList TransactionList::getTransactionsForDate(const Date& d) const {
 
 	if (size() == 0)

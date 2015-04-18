@@ -46,17 +46,19 @@ public:
 	void showMiniStatementOnScreen(bool noTransaction, const string& str, double total) const;
 	void showSearchMenu() const;
 	void showMatchingTransactionsOnScreen(bool noTransaction, const string&str, double total) const;
-
+	void showTransactionsForTitle(bool noTransactions, string title, string str, int n) const;
 	int readInNumberOfTransactions() const;
 	void showNoTransactionsOnScreen() const;
 	int readInSearchCommand() const;
 	int readInAmount() const;
-	
-	Date readInvalidDate(Date& const d) const;
+	string readInTitle() const;
+	Date readInvalidDate(Date& d) const;
 	void showTransactionsUpToDate(bool noTransaction, Date& d, int n, const string& str) const;
 	bool readInConfirmDeletion() const;
-	void showDeletionUpToDate(int num, Date d, bool de) const;
-	void showFundsAvailableOnScreen(bool empty, double n) const;
+	void showDeletionUpToDate(int n, Date d, bool de) const;
+	void showFundsAvailableOnScreen(bool empty, double m) const;
+
+
 	double readInTransferAmount() const;
 	void	showTransferResultOnScreen(bool trOutOK, bool trInOK, double transferAmount) const;
 

@@ -1,4 +1,3 @@
-//Jack Starkey, Alessandro Fasolilli, David McCabe, Tom Gray - Group: 2
 #include "ChildAccount.h"
 
 ChildAccount::ChildAccount()

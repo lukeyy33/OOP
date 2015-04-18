@@ -90,6 +90,11 @@ void BankAccount::produceTransactionsForAmount( double amount, string& str, int&
 	n = trl.size();
 	str = trl.toFormattedString();
 }
+void BankAccount::produceTransactionsForTitle(string title, string str, int n) const {
+	TransactionList trl = transactions_.getTransactionsForTitle(title);
+	n = trl.size();
+	str = trl.toFormattedString();
+}
 
 void BankAccount::produceTransactionsForDate(const Date& d, string& str, int& n) const {
 
@@ -149,10 +154,10 @@ bool BankAccount::canWithdraw( double amountToWithdraw ) const {
     return ( amountToWithdraw <= borrowable());
 }
 double BankAccount::maxWithdrawalAllowed() const {
-	double maxWidthdrawal(0.0);
-	maxWidthdrawal = balance_;
+	double maxWithdrawal;
+	maxWithdrawal = balance_;
 
-	return maxWidthdrawal;
+	return maxWithdrawal;
 }
 
 void BankAccount::recordWithdrawal( double amountToWithdraw) {

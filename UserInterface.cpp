@@ -29,21 +29,21 @@ int UserInterface::readInCardIdentificationCommand() const {
     return ( readInCommand());
 }
 void UserInterface::showCardIdentificationMenu() const {
-	cout << "\n\n\n      ________________________________________";
-	cout << "\n      _______CARD IDENTIFICATION MENU________";
-	cout << "\n      ________________________________________";
+	cout << "\n\n\n ________________________________________";
+	cout << "\n     ________CARD IDENTIFICATION MENU________";
+	cout << "\n     ________________________________________";
 	cout << "\n       0           Quit CashPoint application";
 	cout << "\n       1              Enter your card details";
-	cout << "\n      ________________________________________";
+	cout << "\n     ________________________________________";
 }
 int UserInterface::readInAccountProcessingCommand() const{
     showAccountProcessingMenu();
     return ( readInCommand());
 }
 void UserInterface::showAccountProcessingMenu() const {
-	cout << "\n\n\n      ________________________________________";
-	cout << "\n      ________ACCOUNT PROCESSING MENU________";
-	cout << "\n      ________________________________________";
+	cout << "\n\n\n ________________________________________";
+	cout << "\n     ________ACCOUNT PROCESSING MENU_________";
+	cout << "\n     ________________________________________";
 	cout << "\n       0 End account processing & remove card";
 	cout << "\n       1                      Display balance";
 	cout << "\n       2                Withdraw from account";
@@ -51,9 +51,9 @@ void UserInterface::showAccountProcessingMenu() const {
 	cout << "\n       4                       Show statement";
 	cout << "\n       5                    Show all deposits";
 	cout << "\n       6                  Show mini statement";
-	cout << "\n       7                  Search Transactions NOT 100% DONE";
-	cout << "\n       8    Clear all transactions up to date NOT 100% DONE";
-	cout << "\n       9                 Show Funds Available NOT 100% DONE";
+	cout << "\n       7                  Search Transactions";
+	cout << "\n       8    Clear all transactions up to date";
+	cout << "\n       9                 Show Funds Available";
 	cout << "\n       10         Transfer to another account";
 	cout << "\n     ________________________________________";
 }
@@ -131,6 +131,10 @@ void UserInterface::showAllDepositsOnScreen(bool noTransaction, const string& st
 		cout << str;
 		cout << "TOTAL DEPOSIT: \234" << total;
 }
+void UserInterface::showFundsAvailableOnScreen(bool empty, double m) const {
+	
+	cout << m << "COMING FROM USERINTERFACE:SHOWFUNDS ";
+}
 //input functions
 
 double UserInterface::readInWithdrawalAmount() const {
@@ -157,7 +161,13 @@ int UserInterface::readInAmount() const {
 	cin >> a;
 	return a;
 }
-Date UserInterface::readInvalidDate(Date& const d) const {
+string UserInterface::readInTitle() const {
+	string title;
+	cout << "\nTITLE TO SEARCH BY: ";
+	cin >> title;
+	return title;
+}
+Date UserInterface::readInvalidDate(Date& d) const {
 
 	cout << "\nDATE TO SEARCH BY: ";
 	cin >> d;
@@ -236,6 +246,14 @@ void UserInterface::showMatchingTransactionsOnScreen(bool noTransaction, const s
 			 << setw(0) << setprecision(2) << total;
 	}
 	cout << "\nEND OF TRANSACTIONS\n";
+}
+void UserInterface::showTransactionsForTitle(bool noTransaction, string title, string str, int n) const {
+	if (noTransaction)
+		cout << "\nNO TRANSACTIONS IN BANK ACCOUNT ";
+	else
+	{
+		cout << "\n" << str;
+	}
 }
 
 void UserInterface::showSearchMenu() const {

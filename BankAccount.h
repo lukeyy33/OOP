@@ -59,6 +59,7 @@ public:
 
 	const string produceNMostRecentTransactions(int numTransactions, double& total) const;
 	void produceTransactionsForAmount(double amount, string& str, int& n) const;
+	void produceTransactionsForTitle(string title, string str, int n) const;
 	void produceTransactionsForDate(const Date& d, string& str, int& n) const;
 	
 	void produceTransactionsUpToDate(const Date& d, string& str, int& n) const;

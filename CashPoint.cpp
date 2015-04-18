@@ -244,9 +244,20 @@ void CashPoint::m7a_showTransactionsForAmount() const {
 }
 //--option 7b
 void CashPoint::m7b_showTransactionsForTitle() const {
+	bool noTransaction(p_theActiveAccount_->isEmptyTransactionList());
 
+	string title = theUI_.readInTitle();
 
+	int n(0);
+	string str("");
+	
+	//theUI_.showNoTransactionsOnScreen();
+
+	p_theActiveAccount_->produceTransactionsForTitle(title, str, n);
+	theUI_.showTransactionsForTitle(noTransaction, title, str, n);
+	//theUI_.showMatchingTransactionsOnScreen(title, str, n);
 }
+
 //--option 7c
 void CashPoint::m7c_showTransactionsForDate() const {
 	//1: noTransactions := isEmptyTransactionList(): boolean
@@ -304,35 +315,38 @@ void CashPoint::m8_clearAllTransationsUpToDate() const {
 ////---option 9
 void CashPoint::m9_showFundsAvailableOnAllAccounts() {
 		//1: accts:=getAccounsList():List<string>
-
+		List<string>accts = p_theCashCard_->getAccountsList();
 		//2: empty := isEmpty(): boolean
-
-		//3: first() string
-
-		//4: pacct:= activateBankAccount(string): BankAccount*
-
-		//5: m:= maxWidthrawalAllowed(): double
-
-		//6: releaseBankAccount(BankAccount*, string): BankAccount*
-
-		//7: deleteFirst()
-		
+		bool empty = accts.isEmpty();
+		double m(0.0);
+		string str("");
+		while (!empty)
+		{
+			//3: first() string
+			accts.first();
+			//4: pacct:= activateBankAccount(string): BankAccount*
+			
+			BankAccount* pacct(activateBankAccount(str)); //some String variable in here
+			//5: m:= maxWidthrawalAllowed(): double
+			m = pacct->maxWithdrawalAllowed();
+			//6: releaseBankAccount(BankAccount*, string): BankAccount*
+			BankAccount* releaseBankAccount();
+			//7: deleteFirst()
+			accts.deleteFirst();
+		}
 		//8: showFundsAvailableOnScreen(empty, double)
-	
+		theUI_.showFundsAvailableOnScreen(empty, m);
 }
-<<<<<<< HEAD
 
-//--option 10
-void CashPoint::m10_transferCashToAnotherAccount() const {
-
-=======
 //--option 10
 void CashPoint::m10_transferCashToAnotherAccount() 
 {
 	string anAccountNumber, anAccountSortCode;
 	string s_card(p_theCashCard_->toFormattedString());
+
 	theUI_.showCardOnScreen(s_card);
 	string bankAccountFileName(theUI_.readInAccountToBeProcessed(anAccountNumber, anAccountSortCode));
+
 	int validAccountCode = validateAccount(bankAccountFileName);
 	theUI_.showValidateAccountOnScreen(validAccountCode, anAccountNumber, anAccountSortCode);
 	if (validAccountCode == 0)
@@ -341,7 +355,7 @@ void CashPoint::m10_transferCashToAnotherAccount()
 		attemptTransfer(transferAccount);
 		releaseBankAccount(transferAccount, bankAccountFileName);
 	}
->>>>>>> origin/master
+
 }
 
 //------private file functions
