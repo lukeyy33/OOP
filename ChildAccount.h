@@ -11,7 +11,9 @@ class ChildAccount: public SavingsAccount {
 public:
 
 	ChildAccount();
-    ChildAccount(const string& typ, const string& acctNum, const string& sCode ,const Date& cD, double b,const TransactionList& trList, const double minB, const double intRate, double maxPaidIn, double minPaidIn);
+    ChildAccount(const string& typ, const string& acctNum, const string& sCode, 
+		const Date& cD, double b,const TransactionList& trList, const double minB,
+		double maxPaidIn, double minPaidIn);
 	
 	virtual ~ChildAccount();
     

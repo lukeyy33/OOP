@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 #include "CurrentAccount.h"
 
 CurrentAccount::CurrentAccount()

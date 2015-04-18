@@ -34,6 +34,7 @@ public:
 	bool operator==( const Date& d) const;  	//true if (*this == d)
 	bool operator!=( const Date& d) const;  	//true if (*this != d)
 	bool operator<( const Date& d) const;		//true if (*this < d)  (strictly earlier)
+	bool operator<=(const Date& d) const;	//true if (*this <= d) earlier and equal to
 
 private:
 	int day_;

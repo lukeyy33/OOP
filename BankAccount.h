@@ -37,9 +37,9 @@ public:
 
 	//functions to put data into and get data from streams
 	virtual	ostream& putDataInStream( ostream& os) const;
-	virtual ostream& putAccountDetailsInStream(ostream& os) const;
+	ostream& putAccountDetailsInStream(ostream& os) const;
 	virtual istream& getDataFromStream(istream& is);
-	virtual istream& getAccountDataFromStream(istream& is);
+	istream& getAccountDataFromStream(istream& is);
 
 	//other operations
 	virtual const string prepareFormattedStatement() const;
