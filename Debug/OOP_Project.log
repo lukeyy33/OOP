@@ -1,17 +1,32 @@
-<<<<<<< HEAD
-﻿Build started 4/18/2015 4:39:47 PM.
-=======
-<<<<<<< HEAD
-﻿Build started 18/04/2015 17:13:18.
-=======
-<<<<<<< HEAD
-﻿Build started 4/17/2015 4:00:00 PM.
->>>>>>> origin/master
-     1>Project "D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\OOP_Project.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/18/2015 5:38:40 PM.
+     1>Project "D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\OOP_Project.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CashPoint.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt 5003_Ass2_Main.cpp BankAccount.cpp CashCard.cpp CashPoint.cpp ChildAccount.cpp CurrentAccount.cpp Date.cpp ISAAccount.cpp SavingsAccount.cpp Time.cpp Transaction.cpp TransactionList.cpp UserInterface.cpp
+         UserInterface.cpp
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(153): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(162): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(233): warning C4309: 'static_cast' : truncation of constant value
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(245): warning C4309: 'static_cast' : truncation of constant value
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(271): warning C4129: 'N' : unrecognized character escape sequence
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\userinterface.cpp(272): warning C4129: 'N' : unrecognized character escape sequence
+         TransactionList.cpp
+         Transaction.cpp
+         Time.cpp
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\time.cpp(31): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+         SavingsAccount.cpp
+         ISAAccount.cpp
+         Date.cpp
+     1>d:\my documents\visual studio 2013\projects\oop_project\oop\date.cpp(32): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+         CurrentAccount.cpp
+         ChildAccount.cpp
          CashPoint.cpp
      1>d:\my documents\visual studio 2013\projects\oop_project\oop\cashpoint.cpp(243): warning C4800: 'double' : forcing value to bool 'true' or 'false' (performance warning)
+         CashCard.cpp
+         BankAccount.cpp
+         5003_Ass2_Main.cpp
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.lib" /MACHINE:X86 /SAFESEH Debug\5003_Ass2_Main.obj
          Debug\BankAccount.obj
@@ -26,46 +41,10 @@
          Debug\Transaction.obj
          Debug\TransactionList.obj
          Debug\UserInterface.obj
-         OOP_Project.vcxproj -> D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.exe
-     1>Done Building Project "D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\OOP_Project.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-<<<<<<< HEAD
-Time Elapsed 00:00:01.47
-=======
-Time Elapsed 00:00:01.49
-=======
-﻿Build started 17/04/2015 15:58:13.
->>>>>>> origin/master
-     1>Project "H:\Github\OOP\OOP_Project.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         H:\VS 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ISAAccount.cpp
-         ISAAccount.cpp
-       Link:
-         H:\VS 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"H:\Github\OOP\Debug\OOP_Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"H:\Github\OOP\Debug\OOP_Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"H:\Github\OOP\Debug\OOP_Project.lib" /MACHINE:X86 /SAFESEH Debug\5003_Ass2_Main.obj
-         Debug\BankAccount.obj
-         Debug\CashCard.obj
-         Debug\CashPoint.obj
-         Debug\ChildAccount.obj
-         Debug\CurrentAccount.obj
-         Debug\Date.obj
-         Debug\ISAAccount.obj
-         Debug\SavingsAccount.obj
-         Debug\Time.obj
-         Debug\Transaction.obj
-         Debug\TransactionList.obj
-         Debug\UserInterface.obj
      1>5003_Ass2_Main.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-         OOP_Project.vcxproj -> H:\Github\OOP\Debug\OOP_Project.exe
-     1>Done Building Project "H:\Github\OOP\OOP_Project.vcxproj" (Build target(s)).
+         OOP_Project.vcxproj -> D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\Debug\OOP_Project.exe
+     1>Done Building Project "D:\My Documents\Visual Studio 2013\Projects\OOP_Project\OOP\OOP_Project.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:01.78
-=======
-Time Elapsed 00:00:00.05
->>>>>>> origin/master
->>>>>>> origin/master
->>>>>>> origin/master
+Time Elapsed 00:00:08.94

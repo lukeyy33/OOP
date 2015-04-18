@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 #include "ChildAccount.h"
 
 ChildAccount::ChildAccount()
