@@ -1,11 +1,11 @@
-//Jack Starkey, Alessandro Fasolilli, David McCabe, Tom Gray - Group: 2
+
 #include "ChildAccount.h"
 
 ChildAccount::ChildAccount()
     :  maximumPaidIn_(0.0), minimumPaidIn_(0.0)
 {}
-ChildAccount::ChildAccount(const string& typ,const string& acctNum, const string& sCode, const Date& cD, double b, const TransactionList& trList, double minB, double intRate, double maxPaidIn, double minPaidIn)
-	:SavingsAccount(typ, acctNum, sCode,cD,b,trList, minB, intRate), maximumPaidIn_(maxPaidIn), minimumPaidIn_(minPaidIn)
+ChildAccount::ChildAccount(const string& typ,const string& acctNum, const string& sCode, const Date& cD, double b, const TransactionList& trList, double minB, double maxPaidIn, double minPaidIn)
+	:SavingsAccount(typ, acctNum, sCode,cD,b,trList, minB), maximumPaidIn_(maxPaidIn), minimumPaidIn_(minPaidIn)
 {}
 ChildAccount::~ChildAccount()
 {}
@@ -40,7 +40,6 @@ istream& ChildAccount::getDataFromStream( istream& is) {
 	is >> sortCode_;						//get sort code
  	is >> creationDate_;					//get creation date
 	is >> balance_;							//get balance_
-	is >> interestRate_;
 	is >> minimumBalance_;
 	is >> minimumPaidIn_;
 	is >> maximumPaidIn_;
@@ -56,7 +55,6 @@ ostream& ChildAccount::putDataInStream( ostream& os) const {
 	os << sortCode_ << "\n";				//put sort code
     os << creationDate_ << "\n";			//put creation date
 	os << balance_ << "\n";					//put balance
-	os << interestRate_ << "\n";
 	os << minimumBalance_ << "\n";
 	os << minimumPaidIn_ << "\n";
 	os << maximumPaidIn_ << "\n";

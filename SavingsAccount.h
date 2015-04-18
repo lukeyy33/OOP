@@ -10,10 +10,10 @@ class SavingsAccount: public BankAccount {
 
 public:
     SavingsAccount();
-    SavingsAccount(const string& typ, const string& acctNum, const string& sCode ,const Date& cD, double b,const TransactionList& trList, const double minB, const double intRate);
+    SavingsAccount(const string& typ, const string& acctNum, const string& sCode ,const Date& cD, double b,const TransactionList& trList, const double minB);
 	
 	virtual ~SavingsAccount();
-	double getInterestRate();
+	
 	double getMinimumBalance();
 
 	virtual ostream& putDataInStream( ostream& os) const;
@@ -23,12 +23,12 @@ public:
 
 	virtual const string prepareFormattedStatement() const;
 
-	//virtual bool canTransferOut(double transferAmount) const = 0;
+	//virtual bool canTransferOut(double transferAmount) const;
 	virtual bool canTransferIn(double transferAmount) const = 0;
 protected:
     
 	double minimumBalance_;
-	double interestRate_;
+	
 
 
 };

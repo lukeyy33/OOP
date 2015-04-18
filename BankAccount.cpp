@@ -121,7 +121,7 @@ bool BankAccount::canTransferOut(double transferAmount) const
 
 bool BankAccount::canTransferIn(double transferAmount) const
 {
-	bool trOutOK;
+	//bool trOutOK;
 
 	return true;
 }

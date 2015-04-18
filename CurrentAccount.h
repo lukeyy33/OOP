@@ -24,6 +24,9 @@ public:
 
 	//virtual void readInBankAccountFromFile( const string& fileName);
 
+	//virtual bool canTransferOut(double transferAmount) const;
+	//virtual bool canTransferIn(double transferAmount) const;
+
 	virtual const string prepareFormattedStatement() const;
 
 private:

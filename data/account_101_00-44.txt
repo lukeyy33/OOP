@@ -3,5 +3,5 @@ CURRENT
 00-44
 1/1/2000
 100
-50
-
+18/4/2015 17:15:10 transfer_out_to_acct401_00-44 -10
+18/4/2015 15:15:9 transfer_in_from_acct001_00-44 10

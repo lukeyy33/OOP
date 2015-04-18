@@ -12,9 +12,13 @@ public:
 	
 
 	ISAAccount();
-    ISAAccount(const string& typ, const string& acctNum, const string& sCode ,const Date& cD, double b,const TransactionList& trList, const double minB, const double intRate, double maxYearly, double currentYearly, Date endDepositPeriod);
+	ISAAccount(const string& typ, const string& acctNum, const string& sCode
+		, const Date& cD, double b,
+		const TransactionList& trList,
+		const double minB, double maxYearly, double currentYearly, Date endDepositPeriod);
 	
 	virtual ~ISAAccount();
+
 
 	double getMaximumYearlyDeposit();
 	double getCurrentYearlyDeposit();
@@ -23,8 +27,10 @@ public:
 
 	virtual double borrowable() const;
 
-	virtual ostream& putDataInStream( ostream& os) const;
-	virtual istream& getDataFromStream( istream& is);
+	//virtual	ostream& putDataInStream(ostream& os) const;
+	//virtual ostream& putAccountDetailsInStream(ostream& os) const;
+	//virtual istream& getDataFromStream(istream& is);
+	//virtual istream& getAccountDataFromStream(istream& is);
 
 	virtual const string prepareFormattedStatement() const;
 

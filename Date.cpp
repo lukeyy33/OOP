@@ -43,15 +43,15 @@ bool Date::isValid(Date date) {
 		return false;
 	else
 	{
-		if ((date.getMonth() == 1) || //this is the January 
-			(date.getMonth() == 3) || //this is the March
-			(date.getMonth() == 5) || //this is the May
-			(date.getMonth() == 7) || //this is the July
-			(date.getMonth() == 8) || //this is august
-			(date.getMonth() == 10)|| //this is october
-			(date.getMonth() == 12))  //this is december
+		if ((date.getMonth() == 1) || //January 
+			(date.getMonth() == 3) || //March
+			(date.getMonth() == 5) || //May
+			(date.getMonth() == 7) || //July
+			(date.getMonth() == 8) || //august
+			(date.getMonth() == 10)|| //october
+			(date.getMonth() == 12))  //december
 		{
-			if (date.getDay() > 31) //if the day is 31 or more isn't not a month
+			if (date.getDay() > 31) //if the day is 31 or more isn't a month
 				return false;
 		}
 		else
@@ -113,6 +113,13 @@ bool Date::operator<( const Date& d) const { //NEW
 	return ( ( year_ < d.year_)
 	     || (( year_ == d.year_) && (month_ < d.month_) )
 	     || (( year_ == d.year_) && (month_ == d.month_) && (day_ < d.day_)));
+}
+
+bool Date::operator<=(const Date& d) const { //NEW
+	//true if (strictly) earlier than d (i.e., *this < d)
+	return ((year_ < d.year_)
+		|| ((year_ == d.year_) && (month_ < d.month_))
+		|| ((year_ == d.year_) && (month_ == d.month_) && (day_ <= d.day_)));
 }
 
 //---------------------------------------------------------------------------
