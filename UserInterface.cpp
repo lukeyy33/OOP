@@ -133,7 +133,7 @@ void UserInterface::showAllDepositsOnScreen(bool noTransaction, const string& st
 }
 void UserInterface::showFundsAvailableOnScreen(bool empty, double m) const {
 	
-	cout << m << "COMING FROM USERINTERFACE:SHOWFUNDS ";
+	cout << m << "\n COMING FROM USERINTERFACE::SHOWFUNDS ";
 }
 //input functions
 
